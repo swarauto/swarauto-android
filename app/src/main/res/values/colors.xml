@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="accountInfo_background">#3F51B5</color>
+    <color name="accountInfo_text">#ffffff</color>
+
+    <color name="mainWindowBackground">#ffffff</color>
+    <color name="mainWindowTitleBarBackground">#3F51B5</color>
+    <color name="mainWindowTitleBarContent">#ffffff</color>
+
+    <color name="mainWindowText">#000000</color>
+
+    <color name="outOfRunsBackground">#ff4056</color>
+    <color name="outOfRunsText">#ffffff</color>
+    <color name="runCountBackground">#ff4056</color>
+    <color name="runCountText">#ffffff</color>
+
+    <color name="soldRunesBackground">#ffffff</color>
+    <color name="soldRunesText">#000000</color>
+</resources>

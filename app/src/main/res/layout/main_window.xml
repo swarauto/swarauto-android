@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/mainWindow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainWindowBackground"
+        android:padding="1px">
+
+        <RelativeLayout
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mainWindowTitleBarBackground">
+
+            <ImageView
+                android:id="@+id/window_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_menu" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@+id/btnInfo"
+                android:layout_toRightOf="@+id/window_icon"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/mainWindowTitleBarContent" />
+
+            <ImageView
+                android:id="@+id/btnInfo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_info" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contentWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titleBar">
+
+            <Button
+                android:id="@+id/btnSelectSessionType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:elevation="0dp"
+                android:text="Select session types" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/actionButtonsContainer"
+                android:layout_below="@+id/btnSelectSessionType">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/configsWrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Max refills: "
+                                android:textColor="@color/mainWindowText" />
+
+                            <EditText
+                                android:id="@+id/refillTimes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Max runs: "
+                                android:textColor="@color/mainWindowText" />
+
+                            <EditText
+                                android:id="@+id/maxRuns"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkboxRecordRuneStoneSelling"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Record sold Runes"
+                                android:textColor="@color/mainWindowText" />
+
+                            <Button
+                                android:id="@+id/btnShowSoldRunes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="View" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Keep runes: "
+                                android:textColor="@color/mainWindowText" />
+
+                            <Button
+                                android:id="@+id/btnSelectMinRarity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <Button
+                                android:id="@+id/btnSelectMinGrade"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/log"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/actionButtonsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Start" />
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Stop" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/corner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/corner" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dockView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iconDock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:alpha=".75"
+            android:src="@drawable/ic_init" />
+
+        <TextView
+            android:id="@+id/runCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/runCountBackground"
+            android:padding="2dp"
+            android:text="0"
+            android:textColor="@color/runCountText" />
+
+    </RelativeLayout>
+
+</merge>

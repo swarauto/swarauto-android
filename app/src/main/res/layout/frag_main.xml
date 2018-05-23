@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Account info-->
+    <LinearLayout
+        android:id="@+id/accountInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accountInfo_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/accountInfo_text" />
+    </LinearLayout>
+
+    <!--System info-->
+    <LinearLayout
+        android:id="@+id/systemInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/openWindowContainer"
+        android:layout_below="@+id/accountInfoContainer"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="4dp"
+
+            android:text="System info"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:text="Rune/Stone/Gem recognizer"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textOcrStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:text="Device configs"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textProfileStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            android:text="Floating window"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textFloatingWindowStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp" />
+
+        <Button
+            android:id="@+id/btnRecheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recheck"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!--Start-->
+    <LinearLayout
+        android:id="@+id/openWindowContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/accountInfo_background"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Select device config and click BEGIN"
+            android:textColor="@color/accountInfo_text" />
+
+        <Spinner
+            android:id="@+id/comboBoxProfiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:popupBackground="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/btnBegin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Begin" />
+    </LinearLayout>
+</RelativeLayout>
