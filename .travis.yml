@@ -1,0 +1,29 @@
+language: android
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+
+android:
+  components:
+    - android-26
+    - build-tools-27.0.0
+
+script:
+  - ./gradlew :app:assembleRelease
+
+# Github release
+deploy:
+  provider: releases
+  api_key:
+    secure: bbMQulILmyj10Yro5s9v05Yph9CVU5UCFwsZTHN95hU6GUG9xu2skoVgAWNek9hlCP6hB0VYvLucnNh6nHp7diDCmibwn757sMenS0PDeLKE6w/TAFhxp2KyfTNEPrGarM1GgsQW7TTvdSdkBhM2CFXDt7lRELz/WrJpgtFkH6YKGrLP8kkIh8EvzUGYt82WKaUXy6/CkB0vZji4RTAv9Cn718zPFhE3ycC7fSPxkgQuuFAWK7str4yI1s8HH+vhfNvljQ4+tzz4E99wURndDRg4ve6eQhMu+8zaUD6zL5t0J5UlIC88hbkFoFKD74eU8cBST25y7M2Yon4ESAEqVqcK0DuBhfBncl+UCF/PSluWCgQtD2pRc9ZWHy9s5XakVD2/fRPMMKiYl4Tgq8iKwdqZFaG3qQKqwgx/e4tMfXa9kakjFQgecwB6aJUN85DcZqki1YJ5dTuuiyKlIsMURX5JD5sne3lKeCLvgjOGb1XrJdcdpOC8h7arSjbTJjl091QDE2e5R5AFMh0O24jlLdnh4TgNok302Y/pkJDhNX5QoqyYk8CGMS5lli0SMOMHOqbWHNPORhniUyS+GHu1tP/6ehUkAGROyAwDpckLYV19TY5I/bftuYT+PlegTRor0e0XtGsGMuOBNhVROVS/5qgiDVaZDjmKl+wy0zSw8Ug=
+  file_glob: true
+  file: "app/build/outputs/apk/release/com.swarauto.android-*.apk"
+  skip_cleanup: true
+  on:
+    tags: true
